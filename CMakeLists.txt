@@ -53,7 +53,7 @@ if(NOT CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
 		set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-psabi")
 	endif()
 
-	set(CMAKE_CXX_STANDARD 14)
+	set(CMAKE_CXX_STANDARD 17)
 	set(CXX_STANDARD_REQUIRED ON)
 	set(CXX_EXTENSIONS OFF)
 endif()
@@ -597,6 +597,7 @@ set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES "${GENERATED_QRC
 # uninstall target
 configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/cmake/cmake_uninstall.cmake.in" "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake" IMMEDIATE @ONLY)
 add_custom_target(uninstall COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
+
 
 # enable make package - no code after this line !
 include (${CMAKE_CURRENT_SOURCE_DIR}/cmake/packages.cmake)
